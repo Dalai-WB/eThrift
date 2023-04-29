@@ -9,12 +9,24 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { UserServiceService } from './services/user-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './components/card/card.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { DonationBoxComponent } from './pages/donation-box/donation-box.component';
+import { InfoComponent } from './pages/info/info.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     CardComponent,
+    HomeComponent,
+    ChatComponent,
+    DonationBoxComponent,
+    InfoComponent,
+    WishlistComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
