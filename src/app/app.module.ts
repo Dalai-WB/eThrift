@@ -21,6 +21,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'donation-box', component: DonationBoxComponent },
+  { path: 'information', component: InfoComponent },
+  { path: 'wish-list', component: WishlistComponent },
+  { path: 'profile', component: ProfileComponent },
   // { path: '**', component: Page404Component },
 ];
 

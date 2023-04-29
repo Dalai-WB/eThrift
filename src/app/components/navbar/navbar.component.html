@@ -1,39 +1,34 @@
 <div class="flex w-full bg-primary align-items-center justify-content-between">
   <div>
     <a href="#">
-      <img
-        src="../../assets/images/eThrift-full-icon.png"
-        width="90px"
-        height="50px"
-        alt="logo"
-      />
+      <img src="../../assets/images/eThrift-full-icon.png" width="90px" height="50px" alt="logo" />
     </a>
   </div>
   <div class="flex h-full">
-    <div
-      class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center"
-    >
-      home
+    <div class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center">
+      <a [routerLink]="['/home']">
+        home
+      </a>
     </div>
-    <div
-      class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center"
-    >
-      donation box
+    <div class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center">
+      <a [routerLink]="['/donation-box']">
+        donation box
+      </a>
     </div>
-    <div
-      class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center"
-    >
-      information
+    <div class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center">
+      <a [routerLink]="['/information']">
+        information
+      </a>
     </div>
-    <div
-      class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center"
-    >
-      wishlist
+    <div class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center">
+      <a [routerLink]="['/wishlist']">
+        wishlist
+      </a>
     </div>
-    <div
-      class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center"
-    >
-      profile
+    <div class="w-15rem h-full hover:bg-white transition-duration-200 flex justify-content-center">
+      <a [routerLink]="['/profile']">
+        profile
+      </a>
     </div>
   </div>
 </div>
