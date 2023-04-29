@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
+import { UserServiceService } from './services/user-service.service';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTabsModule,
+    HttpClient,
   ],
-  providers: [],
+  providers: [UserServiceService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

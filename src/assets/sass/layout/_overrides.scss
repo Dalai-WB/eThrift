@@ -9,3 +9,7 @@
 .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
     color: var(--black-color);
 }
+
+.mat-mdc-tab:hover {
+    background-color: var(--primary-10);
+}
