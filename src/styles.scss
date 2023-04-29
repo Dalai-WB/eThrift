@@ -1,6 +1,6 @@
 @import "assets/sass/layout/_variables";
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
+@import "assets/sass/layout/_overrides";
+@import "../node_modules/primeflex/primeflex.css";
 
 body {
   background: var(--background-color);
@@ -8,12 +8,23 @@ body {
   padding: 0;
 }
 
-.dalai {
-  background-color: var(--primary-color);
+a {
+  text-decoration: none;
 }
 
 .sidebar-cont {
-  width: 300px;
+  width: 400px;
   height: 100vh;
   background: var(--white-color);
+
+  .sidebar-top {
+    padding: 16px;
+    height: 60px;
+    background: var(--primary-color);
+    color: var(--white-color);
+
+  }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
