@@ -1,9 +1,10 @@
 'use strict';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 
 import { ElementRef } from '@angular/core';
 import { Renderer2 } from "@angular/core";
-import { faXmark, faHeart} from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 
 @Component({
@@ -13,23 +14,33 @@ import { faXmark, faHeart} from '@fortawesome/free-solid-svg-icons';
 })
 export class CardComponent implements OnInit, AfterViewInit {
   @ViewChild('tinder') tinderContainer: ElementRef | any;
+  @ViewChildren('allTheseThings') things: QueryList<any> | any;
 
   wishlist: any[] = [];
-
+  allPro: any[] = [];
+  zurag: string = '../../../assets/images/profile-picture.webp';
   faXmark = faXmark;
   faHeart = faHeart;
   allCards: any;
   nope: any;
   love: any;
 
-  constructor(private elementRef: ElementRef, private renderer2: Renderer2) {
+  constructor(private userService: UserServiceService) {
 
   }
+  ngAfterViewInit(): void {
+    this.things.changes.subscribe(() => {
+      this.cardHandler();
+    })
+  }
+
   ngOnInit(): void {
-    
+    this.userService.findAll().subscribe((val) => {
+      this.allPro = val.data;
+    });
   }
 
-  ngAfterViewInit() {
+  cardHandler() {
     this.allCards = this.tinderContainer.nativeElement.querySelectorAll('.tinder--card');
     this.initCards();
     this.allCards.forEach((el: any) => {
@@ -54,14 +65,24 @@ export class CardComponent implements OnInit, AfterViewInit {
       });
 
       hammertime.on('panend', (event) => {
+        var method = 0;
         el.classList.remove('moving');
-        this.tinderContainer.nativeElement.classList.remove('tinder_love');
-        this.tinderContainer.nativeElement.classList.remove('tinder_nope');
-
         var moveOutWidth = document.body.clientWidth;
         var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
 
+        if (this.tinderContainer.nativeElement.classList.contains('tinder_love')) {
+          method = 1;
+        }
+
+        this.tinderContainer.nativeElement.classList.remove('tinder_love');
+        this.tinderContainer.nativeElement.classList.remove('tinder_nope');
+
         event.target.classList.toggle('removed', !keep);
+        if (!keep && method) {
+          const id = +event.target.id;
+          console.log(this.allPro[id]._id);
+        }
+
 
         if (keep) {
           event.target.style.transform = '';
@@ -83,7 +104,6 @@ export class CardComponent implements OnInit, AfterViewInit {
 
   initCards(card?: any, index?: any) {
     var newCards = this.tinderContainer.nativeElement.querySelectorAll('.tinder--card:not(.removed)');
-    console.log(newCards);
 
     newCards.forEach((card: any, index: any) => {
       card.style.zIndex = this.allCards.length - index;
@@ -94,7 +114,7 @@ export class CardComponent implements OnInit, AfterViewInit {
     this.tinderContainer.nativeElement.classList.add('loaded')
   }
 
-  onNopeClick (love: any) {
+  onNopeClick(love: any) {
     var cards = this.tinderContainer.nativeElement.querySelectorAll('.tinder--card:not(.removed)');
     var moveOutWidth = document.body.clientWidth * 1.5;
 

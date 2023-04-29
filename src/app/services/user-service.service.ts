@@ -2,16 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL = 'https://ethrift-jhrck.fibo.mn/api/user/';
+const API_URL = 'https://ethrift-jhrck.fibo.mn/api/product/';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class UserServiceService {
-
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
   // getPublicContent(): Observable<any> {
   //   return this.http.get(API_URL + 'all', { responseType: 'json' });
   // }
@@ -47,8 +43,10 @@ export class UserServiceService {
   findAll(): Observable<any> {
     return this.http.get(API_URL + '', { responseType: 'json' });
   }
-  find(): Observable<any> {
-    return this.http.get(API_URL + 'find', { responseType: 'json' });
+  findByUserId(id: any): Observable<any> {
+    return this.http.get(API_URL + 'owner/' + `${id}`, {
+      responseType: 'json',
+    });
   }
   findOne(userID: any): Observable<any> {
     return this.http.get(API_URL + `${userID}`, {

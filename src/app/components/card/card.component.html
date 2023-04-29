@@ -5,35 +5,16 @@
   </div>
 
   <div class="tinder--cards">
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/people">
-      <h3>Demo card 1</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/animals">
-      <h3>Demo card 2</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/nature">
-      <h3>Demo card 3</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/tech">
-      <h3>Demo card 4</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/arch">
-      <h3>Demo card 5</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
+    <div #allTheseThings class="tinder--card" *ngFor="let card of allPro; index as i" [id]="i">
+      <img class="w-full" [src]="'data:image/jpeg;base64,'+card.image[0]">
+      <h3>{{card.price}}</h3>
+      <p>{{card.description}}</p>
     </div>
   </div>
 
   <div class="tinder--buttons">
     <button id="nope" (click)="onNopeClick(false)"><fa-icon class="fa fa-remove" [icon]="faXmark"></fa-icon></button>
     <button id="love" (click)="onNopeClick(true)"><fa-icon class="fa fa-heart" [icon]="faHeart"></fa-icon></button>
+    <button (click)="cardHandler()">aaa</button>
   </div>
 </div>
