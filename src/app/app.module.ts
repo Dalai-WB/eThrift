@@ -17,7 +17,10 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -40,6 +43,7 @@ const routes: Routes = [
     WishlistComponent,
     ProfileComponent,
     NavbarComponent,
+    AddDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,14 +51,17 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatTabsModule,
     HttpClientModule,
+    MatDialogModule,
     RouterModule,
+    MatInputModule,
     RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'enabled',
       onSameUrlNavigation: 'reload',
     }),
 
+    MatFormFieldModule,
   ],
-  providers: [UserServiceService,],
-  bootstrap: [AppComponent]
+  providers: [UserServiceService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
