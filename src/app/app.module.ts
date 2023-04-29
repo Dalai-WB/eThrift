@@ -21,6 +21,9 @@ import { AddDialogComponent } from './components/add-dialog/add-dialog.component
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HammerModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -58,8 +61,9 @@ const routes: Routes = [
       scrollPositionRestoration: 'enabled',
       onSameUrlNavigation: 'reload',
     }),
-
     MatFormFieldModule,
+    HammerModule,
+    FontAwesomeModule,
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent],

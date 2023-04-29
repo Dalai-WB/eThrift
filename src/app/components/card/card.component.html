@@ -1,7 +1,7 @@
-<div class="tinder">
+<div #tinder class="tinder">
   <div class="tinder--status">
-    <i class="fa fa-remove"></i>
-    <i class="fa fa-heart"></i>
+    <fa-icon [icon]="faXmark" class="fa fa-remove"></fa-icon>
+    <fa-icon [icon]="faHeart" class="fa fa-heart"></fa-icon>
   </div>
 
   <div class="tinder--cards">
@@ -33,7 +33,7 @@
   </div>
 
   <div class="tinder--buttons">
-    <button id="nope"><i class="fa fa-remove"></i></button>
-    <button id="love"><i class="fa fa-heart"></i></button>
+    <button id="nope" (click)="onNopeClick(false)"><fa-icon class="fa fa-remove" [icon]="faXmark"></fa-icon></button>
+    <button id="love" (click)="onNopeClick(true)"><fa-icon class="fa fa-heart" [icon]="faHeart"></fa-icon></button>
   </div>
 </div>
