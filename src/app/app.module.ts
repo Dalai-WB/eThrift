@@ -15,6 +15,7 @@ import { DonationBoxComponent } from './pages/donation-box/donation-box.componen
 import { InfoComponent } from './pages/info/info.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     InfoComponent,
     WishlistComponent,
     ProfileComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
