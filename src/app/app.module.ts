@@ -7,7 +7,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { UserServiceService } from './services/user-service.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { HttpClient } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    HttpClient,
+    HttpClientModule,
   ],
   providers: [UserServiceService,],
   bootstrap: [AppComponent]
