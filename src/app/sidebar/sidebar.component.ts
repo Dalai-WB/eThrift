@@ -7,7 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent implements OnInit {
-  imagePath: any;
+  imagePath: any = '../../assets/images/profile-picture.webp';
   name: any;
 
   constructor(private userService: UserServiceService,

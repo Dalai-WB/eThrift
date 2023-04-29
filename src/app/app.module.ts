@@ -15,6 +15,13 @@ import { DonationBoxComponent } from './pages/donation-box/donation-box.componen
 import { InfoComponent } from './pages/info/info.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  // { path: '**', component: Page404Component },
+];
 
 @NgModule({
   declarations: [
@@ -27,6 +34,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     InfoComponent,
     WishlistComponent,
     ProfileComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -34,6 +42,12 @@ import { ProfileComponent } from './pages/profile/profile.component';
     BrowserAnimationsModule,
     MatTabsModule,
     HttpClientModule,
+    RouterModule,
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      onSameUrlNavigation: 'reload',
+    }),
+
   ],
   providers: [UserServiceService,],
   bootstrap: [AppComponent]
