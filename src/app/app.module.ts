@@ -16,6 +16,7 @@ import { InfoComponent } from './pages/info/info.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -34,7 +35,7 @@ const routes: Routes = [
     InfoComponent,
     WishlistComponent,
     ProfileComponent,
-
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

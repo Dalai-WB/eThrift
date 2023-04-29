@@ -4,11 +4,10 @@ import { register } from 'swiper/element/bundle';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'eThrift';
-  constructor() {
-    register();
-  }
+  page: any;
+  changePage() {}
 }
