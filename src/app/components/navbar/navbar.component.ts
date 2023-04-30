@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  constructor(private router: Router) {
+  selected: string = 'home';
+  constructor(private router: Router, private routes: ActivatedRoute) {
   }
-  
+
+  ngOnInit() {
+    this.router.events.subscribe(event=>{
+      if(event instanceof NavigationEnd) {
+        this.selected = event.url;
+      }
+    })
+  }
+
+  onItemClick(string: string) {
+    this.selected = string;
+  }
 }

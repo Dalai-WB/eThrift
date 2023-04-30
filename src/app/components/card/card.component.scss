@@ -5,14 +5,15 @@
   }
   
   .tinder {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: calc(100vh - 48px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     position: relative;
     opacity: 0;
     transition: opacity 0.1s ease-in-out;
+    background: var(--background-color);
   }
   
   .loaded.tinder {
@@ -51,7 +52,6 @@
   
   .tinder--cards {
     flex-grow: 1;
-    padding-top: 40px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -128,7 +128,7 @@
   }
   
   .fa-heart {
-    color: #FFACE4;
+    color: var(--primary-color);
   }
   
   .fa-remove {

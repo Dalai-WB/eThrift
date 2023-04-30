@@ -1,1 +1,27 @@
-<p>wishlist works!</p>
+<div class="wishlist-cont">
+    <div class="flex justify-center h-12 items-center">
+        <h1 class="text-2xl">Хүслийн жагсаалт</h1>
+    </div>
+    <div class="wish-list-cont grid grid-cols-4 gap-5">
+        <div class="w-auto" *ngFor="let card of wishlist">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>aa</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <p>{{card.description}}</p>
+                </mat-card-content>
+                <div>
+                    <mat-card-actions class="justify-around">
+                        <button mat-button class="rounded-lg buy">Aвах</button>
+                        <button mat-button class="rounded-lg clear">Aрилгах</button>
+                    </mat-card-actions>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,46 +1,29 @@
-<div
-  class="flex w-full bg-primary align-items-center justify-content-between bg-cyan-300"
->
-  <div class="w-1/6">
+<div class="flex w-full items-center justify-between bg-cyan-300 navbar-cont">
+  <div class="w-1/6 px-10">
     <a href="#">
-      <img
-        src="../../assets/images/eThrift-full-icon.png"
-        width="90px"
-        height="50px"
-        alt="logo"
-      />
+      <img src="../../assets/images/eThrift-full-icon.png" width="70px" height="50px" alt="logo" />
     </a>
   </div>
-  <div class="flex h-full w-5/6">
-    <div
-      [routerLink]="['/home']"
-      class="w-1/5 h-full hover:bg-white duration-200 flex justify-center"
-    >
-      home
+  <div class="flex h-full  w-5/6">
+    <div [routerLink]="['/home']" class="w-1/5 h-12 item flex justify-center items-center"
+      [ngClass]="{'selected' : selected === '/home'}" (click)="onItemClick('home')">
+      <p>Home</p>
     </div>
-    <div
-      [routerLink]="['/donation-box']"
-      class="w-1/5 h-full hover:bg-white duration-200 flex justify-center"
-    >
-      donation box
+    <div [routerLink]="['/wish-list']" class="w-1/5 h-12 item flex justify-center items-center"
+      [ngClass]="{'selected' : selected === '/wish-list'}" (click)="onItemClick('wishlist')">
+      <p>Wishlist</p>
     </div>
-    <div
-      [routerLink]="['/information']"
-      class="w-1/5 h-full hover:bg-white duration-200 flex justify-center"
-    >
-      information
+    <div [routerLink]="['/donation-box']" class="w-1/5 h-12 item flex justify-center items-center"
+      [ngClass]="{'selected' : selected === '/donation-box'}" (click)="onItemClick('donation-box')">
+      <p>Donation box</p>
     </div>
-    <div
-      [routerLink]="['/wish-list']"
-      class="w-1/5 h-full hover:bg-white duration-200 flex justify-center"
-    >
-      wishlist
-    </div>
-    <div
-      [routerLink]="['/profile']"
-      class="w-1/5 h-full hover:bg-white duration-200 flex justify-center"
-    >
-      profile
+    <div [routerLink]="['/information']" class="w-1/5 h-12 item flex justify-center items-center"
+      [ngClass]="{'selected' : selected === '/information'}" (click)="onItemClick('info')">
+      <p>Information</p>
+    </div>    
+    <div [routerLink]="['/profile']" class="w-1/5 h-12 item flex justify-center items-center"
+      [ngClass]="{'selected' : selected === '/profile'}" (click)="onItemClick('profile')">
+      <p>Profile</p>
     </div>
   </div>
 </div>

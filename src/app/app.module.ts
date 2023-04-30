@@ -23,7 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HammerModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import {MatCardModule} from '@angular/material/card';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -64,6 +64,7 @@ const routes: Routes = [
     MatFormFieldModule,
     HammerModule,
     FontAwesomeModule,
+    MatCardModule,
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent],
