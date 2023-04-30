@@ -29,7 +29,6 @@ export class TestComponent implements OnInit, AfterViewInit {
     this.title = 'Loading model, please wait…';
 
     this.model = await tf.loadLayersModel('http://localhost:4200/assets/model.json')
-    console.log(this.model.summary());
 
     this.title = 'Model Trained! Write down digits!';
   }
