@@ -24,13 +24,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HammerModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatCardModule} from '@angular/material/card';
+import { TestComponent } from './components/test/test.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'donation-box', component: DonationBoxComponent },
   { path: 'information', component: InfoComponent },
   { path: 'wish-list', component: WishlistComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: TestComponent },
   // { path: '**', component: Page404Component },
 ];
 
@@ -47,6 +48,7 @@ const routes: Routes = [
     ProfileComponent,
     NavbarComponent,
     AddDialogComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
