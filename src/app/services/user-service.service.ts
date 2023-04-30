@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 const API_URL = 'https://ethrift-jhrck.fibo.mn/api/product/';
+const API_URL_user = 'https://ethrift-jhrck.fibo.mn/api/user/';
 @Injectable({
   providedIn: 'root',
 })
@@ -76,5 +77,19 @@ export class UserServiceService {
     return this.http.get(API_URL + `findUserByManagerId?ID=${ID}`, {
       responseType: 'json',
     });
+  }  
+  addToWishlist(requestJSON: any , id : any): Observable<any> {
+    return this.http.put(API_URL_user + 'wishlist/add/'+`${id}`, requestJSON, {
+      responseType: 'json',
+    });
   }
+  removeFromWishlist(requestJSON: any , id : any): Observable<any> {
+    return this.http.put(API_URL + 'wishlist/remove/'+`${id}`, requestJSON, {
+      responseType: 'json',
+    });
+  }
+  getWishlist (ID: any): Observable<any> {
+    return this.http.get(API_URL_user + 'wishlist/get/'+`${ID}`, { responseType: 'json' });
+  }
+  
 }

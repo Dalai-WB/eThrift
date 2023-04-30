@@ -1,24 +1,34 @@
-<div class="wishlist-cont">
+<div *ngIf="loading" class="flex justify-center items-center h-screen gap-5">
+    <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        role="status">
+        <span
+            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+    </div>
+</div>
+
+<div *ngIf="!loading" class="wishlist-cont">
     <div class="flex justify-center h-12 items-center">
         <h1 class="text-2xl">Хүслийн жагсаалт</h1>
     </div>
     <div class="wish-list-cont grid grid-cols-4 gap-5">
-        <div class="w-auto" *ngFor="let card of wishlist">
-            <mat-card class="example-card">
-                <mat-card-header>
+        <div class="w-auto" *ngFor="let card of wishlist; index as i">
+            <mat-card class="example-card relative">
+                <mat-card-header class="w-full">
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>aa</mat-card-title>
                     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    <img (click)="onCloseClick(i)" class="close-icon absolute right-3 clear"
+                        src="../../../assets/images/close.png" />
                 </mat-card-header>
                 <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
                     alt="Photo of a Shiba Inu">
-                <mat-card-content>
+                <mat-card-content class="desc">
                     <p>{{card.description}}</p>
                 </mat-card-content>
                 <div>
                     <mat-card-actions class="justify-around">
                         <button mat-button class="rounded-lg buy">Aвах</button>
-                        <button mat-button class="rounded-lg clear">Aрилгах</button>
+                        <!-- <button mat-button class="rounded-lg clear">Aрилгах</button> -->
                     </mat-card-actions>
                 </div>
             </mat-card>

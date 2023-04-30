@@ -24,6 +24,7 @@ export class CardComponent implements OnInit, AfterViewInit {
   allCards: any;
   nope: any;
   love: any;
+  loading: boolean = false;
 
   constructor(private userService: UserServiceService) {
 
@@ -35,7 +36,9 @@ export class CardComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.userService.findAll().subscribe((val) => {
+      this.loading = false;
       this.allPro = val.data;
     });
   }
@@ -80,7 +83,10 @@ export class CardComponent implements OnInit, AfterViewInit {
         event.target.classList.toggle('removed', !keep);
         if (!keep && method) {
           const id = +event.target.id;
-          console.log(this.allPro[id]._id);
+          const jsn = {
+            "id": id
+          }
+          this.userService.addToWishlist(jsn, '644de117971b26c4ed6a55f3').subscribe(() => console.log('irsn'));
         }
 
 

@@ -1,6 +1,6 @@
 .example-card {
   max-width: 400px;
-  height: 360px;
+  height: fit-content;
 }
 
 .example-header-image {
@@ -9,25 +9,37 @@
 }
 
 .wish-list-cont {
-    padding: 16px 32px;
+  padding: 16px 32px;
 }
 
 .wishlist-cont {
   padding-top: 8px;
-  height: 100%;
+  height: fit-content;
   background: var(--background-color);
 }
 
+.desc {
+  padding: 8px 8px;
+}
+
 .buy {
-  width: 76px;
+  width: 80%;
   height: 36px;
-  background: var(--primary-50);
-  padding: 4px 8px;
+  background: var(--primary-90);
+  color: var(--white-color);
+
+  &:hover {
+    background: var(--primary-color);
+  }
 }
 
 .clear {
-  width: 76px;
-  height: 36px;
-  background: var(--red-color);
-  padding: 4px 8px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.close-icon {
+  width: 16px;
+  height: 16px;
 }

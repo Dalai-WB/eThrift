@@ -1,4 +1,11 @@
-<div #tinder class="tinder">
+<div *ngIf="loading" class="flex justify-center items-center h-screen gap-5">
+
+  <strong>Loading...</strong>
+  <div
+    class="ml-auto inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+    role="status"></div>
+</div>
+<div *ngIf="!loading" #tinder class="tinder">
   <div class="tinder--status">
     <fa-icon [icon]="faXmark" class="fa fa-remove"></fa-icon>
     <fa-icon [icon]="faHeart" class="fa fa-heart"></fa-icon>
