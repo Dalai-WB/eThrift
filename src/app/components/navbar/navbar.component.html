@@ -7,23 +7,23 @@
   <div class="flex h-full  w-5/6">
     <div [routerLink]="['/home']" class="w-1/5 h-12 item flex justify-center items-center"
       [ngClass]="{'selected' : selected === '/home'}" (click)="onItemClick('home')">
-      <p>Home</p>
+      <p>Үндсэн</p>
     </div>
     <div [routerLink]="['/wish-list']" class="w-1/5 h-12 item flex justify-center items-center"
       [ngClass]="{'selected' : selected === '/wish-list'}" (click)="onItemClick('wishlist')">
-      <p>Wishlist</p>
+      <p>Хүслийн жагсаалт</p>
     </div>
     <div [routerLink]="['/donation-box']" class="w-1/5 h-12 item flex justify-center items-center"
       [ngClass]="{'selected' : selected === '/donation-box'}" (click)="onItemClick('donation-box')">
-      <p>Donation box</p>
+      <p>Хандивын хайрцаг</p>
     </div>
     <div [routerLink]="['/information']" class="w-1/5 h-12 item flex justify-center items-center"
       [ngClass]="{'selected' : selected === '/information'}" (click)="onItemClick('info')">
-      <p>Information</p>
+      <p>Мэдээлэл</p>
     </div>    
     <div [routerLink]="['/profile']" class="w-1/5 h-12 item flex justify-center items-center"
       [ngClass]="{'selected' : selected === '/profile'}" (click)="onItemClick('profile')">
-      <p>Profile</p>
+      <p>Хэрэглэгчийн хэсэг</p>
     </div>
   </div>
 </div>
